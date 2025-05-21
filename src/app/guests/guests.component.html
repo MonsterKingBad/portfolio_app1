@@ -1,0 +1,25 @@
+<div class="hotel-container">
+    <div *ngFor="let hotel of hotels | slice:0:6" class="hotel-card">
+      <div class="image-wrapper">
+        <img *ngIf="hotel.images?.length" [src]="hotel.images[0].source" width="300" />
+        <div class="overlay">
+          <button class="btn">BOOK NOW</button>
+        </div>
+      </div>
+  
+      <div class="txt">
+        <div class="txt-content">
+          <h3>{{ hotel.name }}</h3>
+          <p>{{ hotel.address }}</p>
+          <h2 class="price">€ {{ hotel.pricePerNight }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="gtxt">
+    <div class="gt1"></div>
+    <p class="gt-title">USP section</p>
+    <div class="gt1"></div>
+  </div>
+  

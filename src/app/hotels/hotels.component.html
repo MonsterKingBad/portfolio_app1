@@ -1,0 +1,22 @@
+<app-navigation></app-navigation>
+<div class="btns">
+    <button class="btn1">All</button>
+    <button class="btn2" >Tbilisi</button>
+  </div>
+<div class="hotel-container">
+    <div *ngFor="let hotel of hotels | slice:0:3" class="hotel-card">
+      <div class="image-wrapper">
+        <img  [src]="hotel.featuredImage" width="300" />
+        <div class="overlay">
+          <button class="btn">VIEW ROOMS</button>
+        </div>
+      </div>
+  
+      <div class="txt">
+        <div class="txt-content">
+          <h3>{{ hotel.name }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+

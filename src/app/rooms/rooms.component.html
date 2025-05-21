@@ -1,0 +1,78 @@
+<app-navigation></app-navigation>
+
+<div class="container">
+  <div class="filter-tabs">
+    <button class="tab" (click)="roomType = ''; applyFilter()">All</button>
+    <button class="tab" (click)="roomType = 'Single Room'; applyFilter()">Single Room</button>
+    <button class="tab" (click)="roomType = 'Double Room'; applyFilter()">Double Room</button>
+    <button class="tab" (click)="roomType = 'Deluxe Room'; applyFilter()">Deluxe Room</button>
+  </div>
+
+  <div class="filter-box">
+    <div class="filter-group">
+      <label>Price Per Night</label>
+      <div class="price-slider">
+        <input type="range" min="0" max="1000" [(ngModel)]="minPrice" />
+        <input type="range" min="0" max="1000" [(ngModel)]="maxPrice" />
+        <div class="range-values">
+          <input type="number" [(ngModel)]="minPrice" />
+          <input type="number" [(ngModel)]="maxPrice" />
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label>Room Type</label>
+      <select [(ngModel)]="roomType">
+        <option value="">Select a room</option>
+        <option>Single Room</option>
+        <option>Double Room</option>
+        <option>Deluxe Room</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Check-in</label>
+      <input type="date" [(ngModel)]="checkInDate" />
+    </div>
+
+    <div class="filter-group">
+      <label>Check-out</label>
+      <input type="date" [(ngModel)]="checkOutDate" />
+    </div>
+
+    <div class="filter-group">
+      <label>Guests</label>
+      <input type="number" [(ngModel)]="guests" min="1" />
+    </div>
+
+    <div class="button-group">
+      <button class="btn apply" (click)="applyFilter()">APPLY FILTER</button>
+      <button class="btn reset" (click)="resetFilter()">RESET</button>
+    </div>
+  </div>
+
+  <div *ngIf="rooms.length > 0" class="hotel-container">
+    <div *ngFor="let room of rooms" class="hotel-card">
+      <div class="image-wrapper">
+        <img *ngIf="room.images?.length > 0" [src]="room.images[0].source" alt="{{ room.name }}" />
+        <img *ngIf="!room.images || room.images.length === 0" src="assets/placeholder.jpg" alt="No image available" />
+        <div class="overlay">
+            <button class="btn" [routerLink]="['/roomdetail', room.id]">VIEW ROOM</button>
+
+        </div>
+      </div>
+
+      <div class="txt">
+        <div class="txt-content">
+          <h3>{{ room.name || 'Unnamed Room' }}</h3>
+        </div>
+        <h2 class="price">€ {{ room.pricePerNight }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="rooms.length === 0">
+    <p>No rooms found for selected filters.</p>
+  </div>
+</div>

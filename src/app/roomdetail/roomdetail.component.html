@@ -1,0 +1,52 @@
+<app-navigation></app-navigation>
+
+<div class="room-detail-wrapper">
+  <div class="room-image-section">
+    <img
+      *ngIf="roomData?.images?.length > 0"
+      [src]="roomData.images[0].source"
+      alt="Room image"
+      class="room-img"
+    />
+    <img
+      *ngIf="roomData?.images?.length === 0"
+      src="https://via.placeholder.com/600x400?text=No+Image"
+      alt="Placeholder image"
+      class="room-img"
+    />
+  </div>
+
+  <div class="reservation-form">
+    <h3>Reservation</h3>
+    <div class="room-title">{{ roomData?.name }}</div>
+    <div class="room-price">€ {{ roomData?.pricePerNight }} <span class="per-night">/ night</span></div>
+
+    <form (ngSubmit)="bookRoom()" #bookingForm="ngForm">
+      <label>
+        Check-in
+        <input type="date" required [(ngModel)]="checkIn" name="checkIn" />
+        <div class="error" *ngIf="!checkIn">Check-in date is required.</div>
+      </label>
+
+      <label>
+        Check-out
+        <input type="date" required [(ngModel)]="checkOut" name="checkOut" />
+        <div class="error" *ngIf="!checkOut">Check-out date is required.</div>
+      </label>
+
+      <label>
+        Customer Name
+        <input type="text" required [(ngModel)]="customerName" name="customerName" placeholder="Please enter your name" />
+        <div class="error" *ngIf="!customerName">Name is required.</div>
+      </label>
+
+      <label>
+        Customer Phone
+        <input type="text" required [(ngModel)]="customerPhone" name="customerPhone" placeholder="Please enter your phone number" />
+        <div class="error" *ngIf="!customerPhone">Phone number is required.</div>
+      </label>
+
+      <button type="submit" class="book-btn">BOOK NOW</button>
+    </form>
+  </div>
+</div>

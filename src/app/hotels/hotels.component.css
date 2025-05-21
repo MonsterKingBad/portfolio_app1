@@ -1,0 +1,149 @@
+.hotel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.hotel-card {
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.hotel-card:hover {
+    transform: scale(1.03);
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: bottom 0.4s ease;
+    pointer-events: none;
+}
+
+.image-wrapper:hover .overlay,
+.hotel-card:hover .overlay {
+    bottom: 0;
+    pointer-events: auto; 
+}
+
+.txt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    background: white;
+    z-index: 10;
+    transform: translateY(0);
+    transition: transform 0.4s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.txt-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    pointer-events: auto; 
+}
+
+.hotel-card:hover .txt {
+    transform: translateY(-700%);
+}
+
+.txt h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.txt p {
+    margin: 0;
+    font-size: 16px;
+    color: #777;
+    flex: 1;
+}
+
+.price {
+    color: #26e7c086;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+.btn {
+    width: 100%;
+    height: 40px;
+    background-color: #17d4afc4;
+    margin-bottom: 30%;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: 1000;
+}
+
+.btns {
+    margin-left: 5%;
+    padding-top: 60px; 
+  }
+  
+
+
+.btn1{
+    width: 3%;
+    height: 40px;
+    background-color: #16aa8cc4;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn2{
+    width: 3%;
+    height: 40px;
+    background-color: rgba(220, 220, 220, 0.719);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+

@@ -1,0 +1,89 @@
+.room-detail-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px;
+  }
+  
+  .room-image-section {
+    flex: 2;
+  }
+  
+  .room-img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reservation-form {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+  
+  .reservation-form h3 {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  
+  .room-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .room-price {
+    color: #2c7be5;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .per-night {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  
+  .book-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c7be5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .book-btn:hover {
+    background-color: #1a5dc9;
+  }
+  
